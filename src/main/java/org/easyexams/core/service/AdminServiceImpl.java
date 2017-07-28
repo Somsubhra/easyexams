@@ -1,6 +1,7 @@
 package org.easyexams.core.service;
 
 import org.easyexams.core.exception.AdminExistsException;
+import org.easyexams.core.exception.AdminNotFoundException;
 import org.easyexams.core.exception.AuthenticationException;
 import org.easyexams.core.model.Admin;
 import org.easyexams.core.repository.AdminRepository;
@@ -45,5 +46,16 @@ public class AdminServiceImpl implements AdminService {
         }
 
         return Password.verify(password, admin.getPassword());
+    }
+
+    @Override
+    public void delete(String username) {
+        Admin admin = adminRepository.findByUsername(username);
+
+        if(admin == null) {
+            throw new AdminNotFoundException(username);
+        }
+
+        adminRepository.delete(admin);
     }
 }

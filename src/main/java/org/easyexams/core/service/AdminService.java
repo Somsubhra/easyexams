@@ -9,4 +9,6 @@ public interface AdminService {
     Admin create(String username, String password);
 
     Boolean authenticate(String username, String password);
+
+    void delete(String username);
 }

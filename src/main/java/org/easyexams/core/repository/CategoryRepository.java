@@ -5,4 +5,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface CategoryRepository extends MongoRepository<Category, String> {
 
+    Integer countByName(String name);
+
+    Category findByName(String name);
 }
