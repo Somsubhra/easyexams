@@ -1,5 +1,6 @@
 package org.easyexams.core.model;
 
+import org.easyexams.core.util.Password;
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;
@@ -23,7 +24,7 @@ public class Admin {
 
     public Admin(String username, String password) {
         this.username = username;
-        this.password = password;
+        this.password = Password.encrypt(password);
         this.createdOn = new Date();
         this.modifiedOn = new Date();
     }
@@ -49,7 +50,7 @@ public class Admin {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = Password.encrypt(password);
     }
 
     public Date getCreatedOn() {
