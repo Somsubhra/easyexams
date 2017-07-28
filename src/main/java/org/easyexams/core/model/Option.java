@@ -1,11 +1,8 @@
 package org.easyexams.core.model;
 
 import java.util.Date;
-import java.util.UUID;
 
 public class Option {
-
-    private String id;
 
     private String text;
 
@@ -18,18 +15,9 @@ public class Option {
     }
 
     public Option(String text) {
-        this.id = UUID.randomUUID().toString();
         this.text = text;
         this.createdOn = new Date();
         this.modifiedOn = new Date();
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getText() {

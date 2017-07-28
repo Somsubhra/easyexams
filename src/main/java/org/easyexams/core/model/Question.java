@@ -3,7 +3,7 @@ package org.easyexams.core.model;
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;
-import java.util.List;
+import java.util.Map;
 
 public class Question {
 
@@ -16,7 +16,7 @@ public class Question {
 
     private Integer difficulty;
 
-    private List<Option> options;
+    private Map<String, Option> options;
 
     private String answer;
 
@@ -28,7 +28,7 @@ public class Question {
 
     }
 
-    public Question(String text, String categoryId, Integer difficulty, List<Option> options, String answer) {
+    public Question(String text, String categoryId, Integer difficulty, Map<String, Option> options, String answer) {
         this.text = text;
         this.categoryId = categoryId;
         this.difficulty = difficulty;
@@ -70,11 +70,11 @@ public class Question {
         this.difficulty = difficulty;
     }
 
-    public List<Option> getOptions() {
+    public Map<String, Option> getOptions() {
         return options;
     }
 
-    public void setOptions(List<Option> options) {
+    public void setOptions(Map<String, Option> options) {
         this.options = options;
     }
 
