@@ -68,4 +68,23 @@ public class QuestionServiceImpl implements QuestionService {
 
         return question;
     }
+
+    @Override
+    public void delete(String questionId) {
+        Question question = getDetails(questionId);
+        questionRepository.delete(question);
+    }
+
+    @Override
+    public Question deleteOption(String questionId, String optionId) {
+        Question question = getDetails(questionId);
+
+        if(question.getAnswer().equals(optionId)) {
+            question.setAnswer(null);
+        }
+
+        question.getOptions().remove(optionId);
+
+        return questionRepository.save(question);
+    }
 }

@@ -19,4 +19,8 @@ public interface QuestionService {
     List<Question> list(String categoryId);
 
     Question getDetails(String questionId);
+
+    void delete(String questionId);
+
+    Question deleteOption(String questionId, String optionId);
 }
