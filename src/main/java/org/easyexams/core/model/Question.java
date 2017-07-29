@@ -3,6 +3,7 @@ package org.easyexams.core.model;
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Question {
@@ -25,7 +26,18 @@ public class Question {
     private Date modifiedOn;
 
     public Question() {
+        this.createdOn = new Date();
+        this.modifiedOn = new Date();
+        this.options = new HashMap<>();
+    }
 
+    public Question(String text, String categoryId, Integer difficulty) {
+        this.text = text;
+        this.categoryId = categoryId;
+        this.difficulty = difficulty;
+        this.options = new HashMap<>();
+        this.createdOn = new Date();
+        this.modifiedOn = new Date();
     }
 
     public Question(String text, String categoryId, Integer difficulty, Map<String, Option> options, String answer) {
