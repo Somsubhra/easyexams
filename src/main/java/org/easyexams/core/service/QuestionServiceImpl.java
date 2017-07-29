@@ -42,6 +42,20 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
+    public Question setText(String questionId, String text) {
+        Question question = getDetails(questionId);
+        question.setText(text);
+        return questionRepository.save(question);
+    }
+
+    @Override
+    public Question setCategory(String questionId, String categoryId) {
+        Question question = getDetails(questionId);
+        question.setCategoryId(categoryId);
+        return questionRepository.save(question);
+    }
+
+    @Override
     public Question setDifficulty(String questionId, Integer difficulty) {
         Question question = getDetails(questionId);
         question.setDifficulty(difficulty);

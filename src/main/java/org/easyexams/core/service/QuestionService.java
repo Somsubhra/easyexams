@@ -12,6 +12,10 @@ public interface QuestionService {
 
     Question setAnswer(String questionId, String answer);
 
+    Question setText(String questionId, String text);
+
+    Question setCategory(String questionId, String categoryId);
+
     Question setDifficulty(String questionId, Integer difficulty);
 
     List<Question> list();
