@@ -19,7 +19,8 @@ public class Admin {
     private Date modifiedOn;
 
     public Admin() {
-
+        this.createdOn = new Date();
+        this.modifiedOn = new Date();
     }
 
     public Admin(String username, String password) {

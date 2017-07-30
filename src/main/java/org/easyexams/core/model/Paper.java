@@ -27,7 +27,8 @@ public class Paper {
     private Date modifiedOn;
 
     public Paper() {
-
+        this.createdOn = new Date();
+        this.modifiedOn = new Date();
     }
 
     public Paper(String testId, String applicantId, List<Question> questions, Map<String, Stack<Attempt>> attempts, Integer score) {

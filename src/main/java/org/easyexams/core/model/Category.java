@@ -16,7 +16,8 @@ public class Category {
     private Date modifiedOn;
 
     public Category() {
-
+        this.createdOn = new Date();
+        this.modifiedOn = new Date();
     }
 
     public Category(String name) {

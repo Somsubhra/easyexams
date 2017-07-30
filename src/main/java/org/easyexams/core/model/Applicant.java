@@ -20,7 +20,8 @@ public class Applicant {
     private Date modifiedOn;
 
     public Applicant() {
-
+        this.createdOn = new Date();
+        this.modifiedOn = new Date();
     }
 
     public Applicant(String uid, String email, String testId) {

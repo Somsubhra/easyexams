@@ -11,7 +11,8 @@ public class Option {
     private Date modifiedOn;
 
     public Option() {
-
+        this.createdOn = new Date();
+        this.modifiedOn = new Date();
     }
 
     public Option(String text) {
