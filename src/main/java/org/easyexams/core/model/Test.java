@@ -2,9 +2,7 @@ package org.easyexams.core.model;
 
 import org.springframework.data.annotation.Id;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Test {
 
@@ -28,7 +26,10 @@ public class Test {
     private Date modifiedOn;
 
     public Test() {
-
+        this.weightage = new HashMap<>();
+        this.questionIds = new ArrayList<>();
+        this.createdOn = new Date();
+        this.modifiedOn = new Date();
     }
 
     public Test(String name, Map<String, Double> weightage, List<String> questionIds, Date startTime, Long duration) {

@@ -85,8 +85,7 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public void delete(String questionId) {
-        Question question = getDetails(questionId);
-        questionRepository.delete(question);
+        questionRepository.delete(getDetails(questionId));
     }
 
     @Override
